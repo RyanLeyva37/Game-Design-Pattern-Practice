@@ -46,7 +46,6 @@ public final class PlayerBuilder {
 
 		private String name;
 		private Team team;
-		private String sheild;
 		private List<String> abilities = new ArrayList<>();
 
 		@Override
