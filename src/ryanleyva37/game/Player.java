@@ -9,7 +9,7 @@ import ryanleyva37.game.enums.Team;
 public class Player {
 	
 	private String name;
-	private Team classType;
+	private Team team;
 	private String sheild;
 	private String weapon;
 	private List<String> abilities = new ArrayList<>();
@@ -51,18 +51,13 @@ public class Player {
 
 
 	public Team getClassType() {
-		return classType;
+		return team;
 	}
 
 
-	public void setDefenseClass(Team defenseClass) {
-		this.classType = defenseClass;
+	public void setDefenseClass(Team team) {
+		this.team = team;
 	}
-
-	public void setOffenseClass(Team wizardClass) {
-		this.classType = wizardClass;
-	}
-
 
 
 	public String getSheild() {
