@@ -32,7 +32,7 @@ public class Player {
 	
 	public void onPlayerRender(Graphics g) {
 		int renderStartPointX = posX - (size/2);
-
+		g.drawString(getName(), renderStartPointX, posY-5);
 		g.fillRect(renderStartPointX, posY, size, 3);
 	}
 	
@@ -55,6 +55,7 @@ public class Player {
 
 	public void setTeam(Team team) {
 		this.team = team;
+		this.posY = team.getPosY();
 	}
 
 	public List<String> getAbilities() {

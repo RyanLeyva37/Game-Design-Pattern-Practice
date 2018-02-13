@@ -27,13 +27,21 @@ public class Canvas extends Applet {
 	}
 	
 	private void initGame() {
-		Player playerDefense = 
+		Player playerTop = 
 				PlayerBuilder.newBuilder()
-				.name("John")
+				.name("Ryan")
 				.topTeam()
 				.noAbilities().build();
 		
-		LineTennis.getLineTennis().addPlayer(playerDefense);
+		Player playerBottom = 
+				PlayerBuilder.newBuilder()
+				.name("Toby")
+				.bottomTeam()
+				.noAbilities().build();
+		
+		LineTennis.getLineTennis().addPlayer(playerTop);
+		LineTennis.getLineTennis().addPlayer(playerBottom);
+
 	}
 	
 	private void startGame() {
