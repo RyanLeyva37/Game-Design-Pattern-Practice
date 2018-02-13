@@ -5,8 +5,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 
 import ryanleyva37.game.LineTennis;
 import ryanleyva37.game.Player;
