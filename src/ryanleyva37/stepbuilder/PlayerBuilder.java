@@ -3,6 +3,9 @@ package ryanleyva37.stepbuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+import ryanleyva37.game.Player;
+import ryanleyva37.game.enums.ClassType;
+
 /**
  * The Step Builder class.
  */
@@ -20,9 +23,9 @@ public final class PlayerBuilder {
 	}
 
 	public interface ClassStep {
-		SheildStep defenseClass(String defenseClass);
+		SheildStep defenseClass();
 
-		WeaponStep offenseClass(String offenseClass);
+		WeaponStep offenseClass();
 	}
 
 	public interface SheildStep {
@@ -61,8 +64,7 @@ public final class PlayerBuilder {
 
 
 		private String name;
-		private String defenseClass;
-		private String offenseClass;
+		private ClassType classType;
 		private int weaponType;
 		private String sheild;
 		private String weapon;
@@ -78,14 +80,14 @@ public final class PlayerBuilder {
 		
 		
 		@Override
-		public SheildStep defenseClass(String defenseClass) {
-			this.defenseClass = defenseClass;
+		public SheildStep defenseClass() {
+			this.classType = ClassType.DEFENSE;
 			return this;
 		}
 
 		@Override
-		public WeaponStep offenseClass(String wizardClass) {
-			this.offenseClass = wizardClass;
+		public WeaponStep offenseClass() {
+			this.classType = ClassType.OFFENSE;
 			return this;
 		}
 
@@ -154,10 +156,8 @@ public final class PlayerBuilder {
 		public Player build() {
 			Player player = new Player(name);
 
-			if (defenseClass != null) {
-				player.setDefenseClass(defenseClass);;
-			} else {
-				player.setOffenseClass(offenseClass);
+			if (classType != null) {
+				player.setDefenseClass(classType);;
 			}
 
 			if (weapon != null) {

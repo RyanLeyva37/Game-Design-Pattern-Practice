@@ -1,22 +1,44 @@
-package ryanleyva37.stepbuilder;
+package ryanleyva37.game;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
+
+import ryanleyva37.game.enums.ClassType;
 
 public class Player {
 	
 	private String name;
-	private String defenseClass;
-	private String offenseClass;
+	private ClassType classType;
 	private int weaponType;
 	private String sheild;
 	private String weapon;
 	private List<String> abilities = new ArrayList<>();
+	private int posX;
+	private int posY;
+	private int size;
 	
 
 	public Player(String name) {
 		this.name = name;
+		size = 50;
+		posX = 25;
+		posY = 50;
 	}
+	
+	
+	
+	
+	public void onPlayerAbilityUpdate() {
+		posX++;
+	}
+	
+	public void onPlayerRender(Graphics g) {
+		int renderStartPointX = posX - (size/2);
+
+		g.fillRect(renderStartPointX, posY, size, 3);
+	}
+	
 
 
 	public String getName() {
@@ -29,23 +51,17 @@ public class Player {
 	}
 
 
-	public String getDefenseClass() {
-		return defenseClass;
+	public ClassType getClassType() {
+		return classType;
 	}
 
 
-	public void setDefenseClass(String defenseClass) {
-		this.defenseClass = defenseClass;
+	public void setDefenseClass(ClassType defenseClass) {
+		this.classType = defenseClass;
 	}
 
-
-	public String getOffenseClass() {
-		return offenseClass;
-	}
-
-
-	public void setOffenseClass(String wizardClass) {
-		this.offenseClass = wizardClass;
+	public void setOffenseClass(ClassType wizardClass) {
+		this.classType = wizardClass;
 	}
 
 
@@ -88,6 +104,18 @@ public class Player {
 		this.abilities = abilities;
 	}
 
+
+	public int getPosX() {
+		return posX;
+	}
+
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	
+	
 
 	
 
