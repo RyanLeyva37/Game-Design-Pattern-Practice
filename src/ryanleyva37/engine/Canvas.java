@@ -13,16 +13,10 @@ import ryanleyva37.stepbuilder.PlayerBuilder;
 public class Canvas extends Applet {
 	
 	LineTennis lineTennis = LineTennis.getLineTennis();
-	
-    // The object we will use to write with instead of the standard screen graphics 
     Graphics bufferGraphics; 
-    // The image that will contain everything that has been drawn on 
-    // bufferGraphics. 
     Image offscreen; 
-    // To get the width and height of the applet. 
     Dimension dim; 
 	
-
 	public void init() {
 		this.setSize(500, 500);
         dim = getSize();
@@ -36,8 +30,7 @@ public class Canvas extends Applet {
 		Player playerDefense = 
 				PlayerBuilder.newBuilder()
 				.name("John")
-				.defenseClass()
-				.withSheild("Best-Sheild")
+				.topTeam()
 				.noAbilities().build();
 		
 		LineTennis.getLineTennis().addPlayer(playerDefense);
@@ -49,11 +42,11 @@ public class Canvas extends Applet {
 		t.start();
 	}
 
-	public void paint(Graphics g) {
+	public void paint(Graphics graphics) {
 	        bufferGraphics.clearRect(0,0,dim.width,dim.width); 
 	        bufferGraphics.setColor(Color.red); 
 			lineTennis.playerRenderUpdate(bufferGraphics);
-	        g.drawImage(offscreen,0,0,this); 
+	        graphics.drawImage(offscreen,0,0,this); 
 	}
 	
     public void update(Graphics g) 

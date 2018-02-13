@@ -4,13 +4,12 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
-import ryanleyva37.game.enums.ClassType;
+import ryanleyva37.game.enums.Team;
 
 public class Player {
 	
 	private String name;
-	private ClassType classType;
-	private int weaponType;
+	private Team classType;
 	private String sheild;
 	private String weapon;
 	private List<String> abilities = new ArrayList<>();
@@ -51,28 +50,19 @@ public class Player {
 	}
 
 
-	public ClassType getClassType() {
+	public Team getClassType() {
 		return classType;
 	}
 
 
-	public void setDefenseClass(ClassType defenseClass) {
+	public void setDefenseClass(Team defenseClass) {
 		this.classType = defenseClass;
 	}
 
-	public void setOffenseClass(ClassType wizardClass) {
+	public void setOffenseClass(Team wizardClass) {
 		this.classType = wizardClass;
 	}
 
-
-	public int getWeaponType() {
-		return weaponType;
-	}
-
-
-	public void setWeaponType(int weaponType) {
-		this.weaponType = weaponType;
-	}
 
 
 	public String getSheild() {
