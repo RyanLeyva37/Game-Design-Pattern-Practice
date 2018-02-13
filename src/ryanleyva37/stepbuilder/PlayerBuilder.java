@@ -88,7 +88,7 @@ public final class PlayerBuilder {
 			Player player = new Player(name);
 
 			if (team != null) {
-				player.setDefenseClass(team);
+				player.setTeam(team);
 			}
 
 			if (!abilities.isEmpty()) {

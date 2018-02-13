@@ -10,8 +10,6 @@ public class Player {
 	
 	private String name;
 	private Team team;
-	private String sheild;
-	private String weapon;
 	private List<String> abilities = new ArrayList<>();
 	private int posX;
 	private int posY;
@@ -50,35 +48,14 @@ public class Player {
 	}
 
 
-	public Team getClassType() {
+	public Team getTeamType() {
 		return team;
 	}
 
 
-	public void setDefenseClass(Team team) {
+	public void setTeam(Team team) {
 		this.team = team;
 	}
-
-
-	public String getSheild() {
-		return sheild;
-	}
-
-
-	public void setSheild(String sheild) {
-		this.sheild = sheild;
-	}
-
-
-	public String getWeapon() {
-		return weapon;
-	}
-
-
-	public void setWeapon(String weapon) {
-		this.weapon = weapon;
-	}
-
 
 	public List<String> getAbilities() {
 		return abilities;
